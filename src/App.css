@@ -1,0 +1,65 @@
+.App {
+  text-align: center;
+  margin:2rem;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+  
+}
+h4 a span {
+  text-decoration: none;
+  color: rgb(3, 69, 95);
+  font-size: .8625rem;
+}
+h4 a span:hover {
+  text-decoration: none;
+    color: rgb(5, 144, 199);
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.calculator-form{
+  padding-bottom:1rem;
+}
+
+.MuiFilledInput-root {
+  margin: 10px;
+  width: 12rem;
+}
+.short{
+  width: 6rem;
+}
+a {
+  text-decoration: none;
+  padding:0 1rem;
+}
