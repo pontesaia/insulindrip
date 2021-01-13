@@ -1,26 +1,30 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
+import BolusCalcDropdown from "./BolusCalcDropdown";
+import BasalCalcDropdown from "./BasalCalcDropdown";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Bolus from "./Bolus";
-import Basal from "./Basal";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		width: "35%",
-		margin: "0 auto",
+		maxWidth: "35%",
+		margin: "2rem auto",
 	},
 	heading: {
 		fontSize: theme.typography.pxToRem(22),
-		flexBasis: "33.33%",
-		flexShrink: 0,
+		// flexBasis: '33.33%',
+		// flexShrink: 0,
 	},
 	secondaryHeading: {
 		fontSize: theme.typography.pxToRem(15),
 		color: theme.palette.text.secondary,
 	},
+	formControl: {
+		//width: "50rem",
+	},
+	formRow: {},
 }));
 
 export default function Calculator() {
@@ -30,6 +34,7 @@ export default function Calculator() {
 	const handleChange = (panel) => (event, isExpanded) => {
 		setExpanded(isExpanded ? panel : false);
 	};
+
 	return (
 		<React.Fragment>
 			<h4>
@@ -55,7 +60,7 @@ export default function Calculator() {
 							BOLUS
 						</Typography>
 					</AccordionSummary>
-					<Bolus />
+					<BolusCalcDropdown />
 				</Accordion>
 				<Accordion
 					expanded={expanded === "panel2"}
@@ -66,7 +71,7 @@ export default function Calculator() {
 							BASAL
 						</Typography>
 					</AccordionSummary>
-					<Basal />
+					<BasalCalcDropdown />
 				</Accordion>
 			</div>
 		</React.Fragment>

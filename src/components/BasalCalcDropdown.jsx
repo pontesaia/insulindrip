@@ -2,11 +2,33 @@ import React from "react";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
+import { makeStyles } from "@material-ui/core/styles";
 
-export default function Bolus() {
+const useStyles = makeStyles((theme) => ({
+	root: {
+		//maxWidth: '35%',
+		//margin: '2rem auto',
+	},
+	heading: {
+		fontSize: theme.typography.pxToRem(22),
+		// flexBasis: '33.33%',
+		// flexShrink: 0,
+	},
+	secondaryHeading: {
+		fontSize: theme.typography.pxToRem(15),
+		color: theme.palette.text.secondary,
+	},
+	formControl: {
+		//width: "50rem",
+	},
+	formRow: {},
+}));
+
+export default function BasalCalcDropdown() {
+	const classes = useStyles();
 	return (
 		<React.Fragment>
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label0"
@@ -37,7 +59,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label1"
@@ -68,7 +90,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label3"
@@ -99,7 +121,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label5"
@@ -130,7 +152,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label7"
@@ -161,7 +183,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label9"
@@ -192,7 +214,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label9"
@@ -223,7 +245,7 @@ export default function Bolus() {
 			</FormControl>
 			<br></br>
 			{/* next row*/}
-			<FormControl variant="filled" className={styles.formControl}>
+			<FormControl variant="filled" className={classes.formControl}>
 				<div>
 					<Select
 						labelId="demo-simple-select-filled-label9"
@@ -255,9 +277,3 @@ export default function Bolus() {
 		</React.Fragment>
 	);
 }
-const styles = {
-	formControl: {
-		width: "50rem",
-	},
-	formRow: {},
-};
