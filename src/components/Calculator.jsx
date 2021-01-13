@@ -54,6 +54,7 @@ export default function Calculator() {
 				<Accordion
 					expanded={expanded === "panel1"}
 					onChange={handleChange("panel1")}
+					elevation={0}
 				>
 					<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 						<Typography className={classes.heading}>
@@ -65,6 +66,7 @@ export default function Calculator() {
 				<Accordion
 					expanded={expanded === "panel2"}
 					onChange={handleChange("panel2")}
+					elevation={0}
 				>
 					<AccordionSummary expandIcon={<ExpandMoreIcon />}>
 						<Typography className={classes.heading}>

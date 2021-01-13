@@ -3,6 +3,8 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { makeStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -22,259 +24,105 @@ const useStyles = makeStyles((theme) => ({
 		//width: "50rem",
 	},
 	formRow: {},
+	calcButton: {
+		borderRadius: "25px",
+		backgroundColor: "#35AEE3",
+		// padding: "12px, 32px, 12px, 32px",
+		width: "100px", 
+		height: "48px",
+		marginTop: "25px",
+		marginBottom: "10px",
+	},
 }));
+
+const items = [
+	{
+		name: "Desired dose",
+		quantity: "mg/lb",
+	},
+	{
+		name: "Body weight",
+		quantity: "mg/lb",
+	},
+	{
+		name: "Concentration",
+		quantity: "mg/L",
+	},
+	{
+		name: "Bag volume",
+		quantity: "ml",
+	},
+	{
+		name: "Drug in bag",
+		quantity: "mg",
+	},
+	{
+		name: "Drip rate",
+		quantity: "mg",
+	},
+	{
+		name: "Drop factor",
+		quantity: "gtts",
+	},
+	{
+		name: "Flow rate",
+		quantity: "gtts",
+	},
+];
 
 export default function BolusCalcDropdown() {
 	const classes = useStyles();
+	const calcField = items.map((i) => (
+		<FormControl variant="filled" className={classes.formControl}>
+			<Grid item>
+				<Select
+					labelId="demo-simple-select-filled-label0"
+					id="demo-simple-select-filled0"
+					value=" "
+				>
+					<MenuItem value=" ">
+						<em>{i.name}</em>
+					</MenuItem>
+					<MenuItem value={10}>Ten</MenuItem>
+					<MenuItem value={20}>Twenty</MenuItem>
+					<MenuItem value={30}>Thirty</MenuItem>
+				</Select>
+				<Select
+					className="short"
+					labelId="demo-simple-select-filled-label0"
+					id="demo-simple-select-filled0"
+					value=" "
+				>
+					<MenuItem value=" ">
+						<em>{i.quantity}</em>
+					</MenuItem>
+					<MenuItem value={10}>Ten</MenuItem>
+					<MenuItem value={20}>Twenty</MenuItem>
+					<MenuItem value={30}>Thirty</MenuItem>
+				</Select>
+			</Grid>
+		</FormControl>
+	));
 
 	return (
 		<React.Fragment>
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label0"
-						id="demo-simple-select-filled0"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Desired dose</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label0"
-						id="demo-simple-select-filled0"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>mg/lb</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label1"
-						id="demo-simple-select-filled1"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Body weight</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label2"
-						id="demo-simple-select-filled2"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>mg/lb</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label3"
-						id="demo-simple-select-filled3"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Concentration</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label4"
-						id="demo-simple-select-filled4"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>mg/L</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label5"
-						id="demo-simple-select-filled5"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Bag volume</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label6"
-						id="demo-simple-select-filled6"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>ml</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label7"
-						id="demo-simple-select-filled7"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Drug in bag</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label8"
-						id="demo-simple-select-filled8"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>mg</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label9"
-						id="demo-simple-select-filled9"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Drip rate</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label10"
-						id="demo-simple-select-filled10"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>mg</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label9"
-						id="demo-simple-select-filled9"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Drop factor</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label10"
-						id="demo-simple-select-filled10"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>gtts</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
-			<br></br>
-			{/* next row*/}
-			<FormControl variant="filled" className={classes.formControl}>
-				<div>
-					<Select
-						labelId="demo-simple-select-filled-label9"
-						id="demo-simple-select-filled9"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>Flow rate</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-					<Select
-						className="short"
-						labelId="demo-simple-select-filled-label10"
-						id="demo-simple-select-filled10"
-						value=" "
-					>
-						<MenuItem value=" ">
-							<em>gtts</em>
-						</MenuItem>
-						<MenuItem value={10}>Ten</MenuItem>
-						<MenuItem value={20}>Twenty</MenuItem>
-						<MenuItem value={30}>Thirty</MenuItem>
-					</Select>
-				</div>
-			</FormControl>
+			<Grid container>
+				<Grid container direction="column" spacing={0}>
+					{calcField}
+					<FormControl>
+						<Grid item>
+							<Button
+								variant="contained"
+								color="primary"
+								component="span"
+								className={classes.calcButton}
+							>
+								Calc
+							</Button>
+						</Grid>
+					</FormControl>
+				</Grid>
+			</Grid>
 		</React.Fragment>
 	);
 }
