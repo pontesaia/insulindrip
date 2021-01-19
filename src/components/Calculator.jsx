@@ -6,16 +6,26 @@ import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import Header from"./Header";
+// import BasalReference from"./BasalReference";
+// import BolusReference from"./BolusReference";
+// import AboutReference from"./AboutReference";
 
 const useStyles = makeStyles((theme) => ({
+		
 	root: {
-		maxWidth: "35%",
+		maxWidth: "350px",
+		minWidth: "350px",
 		margin: "2rem auto",
+		//backgroundColor: "transparent"
+		fontFamily: "Roboto"
+
 	},
 	heading: {
-		fontSize: theme.typography.pxToRem(22),
-		// flexBasis: '33.33%',
-		// flexShrink: 0,
+		fontSize: theme.typography.pxToRem(18),
+		paddingLeft: ".5rem",
+			fontWeight: "bold",	
+	
 	},
 	secondaryHeading: {
 		fontSize: theme.typography.pxToRem(15),
@@ -36,33 +46,28 @@ export default function Calculator() {
 	};
 
 	return (
-		<React.Fragment>
-			<h4>
-				<a href="google.com">
-					<span className="linkCalc"> CALCULATOR </span>
-				</a>
-				|
-				<a href="google.com">
-					<span className="linkCalc"> BOLUS </span>
-				</a>
-				|
-				<a href="google.com">
-					<span className="linkCalc"> BASAL </span>
-				</a>
-			</h4>
-			<div className={classes.root}>
+		<React.Fragment >
+			<Header/>
+			{/* <BolusReference/>
+			<BasalReference/>
+			<AboutReference/> */}
+			<div className={classes.root} >
+				<hr/>
 				<Accordion
 					expanded={expanded === "panel1"}
 					onChange={handleChange("panel1")}
 					elevation={0}
 				>
-					<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-						<Typography className={classes.heading}>
+					<AccordionSummary 
+					expandIcon={<ExpandMoreIcon />}
+					>
+						<Typography className={classes.heading} >
 							BOLUS
 						</Typography>
 					</AccordionSummary>
 					<BolusCalcDropdown />
 				</Accordion>
+				<hr/>
 				<Accordion
 					expanded={expanded === "panel2"}
 					onChange={handleChange("panel2")}
@@ -75,6 +80,7 @@ export default function Calculator() {
 					</AccordionSummary>
 					<BasalCalcDropdown />
 				</Accordion>
+				<hr/>
 			</div>
 		</React.Fragment>
 	);

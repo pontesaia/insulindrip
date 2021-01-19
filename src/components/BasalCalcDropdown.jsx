@@ -6,11 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
 	root: {
-		//maxWidth: '35%',
-		//margin: '2rem auto',
+       
+		fontFamily: "Roboto"
 	},
 	heading: {
-		fontSize: theme.typography.pxToRem(22),
+        fontSize: theme.typography.pxToRem(20),
 		// flexBasis: '33.33%',
 		// flexShrink: 0,
 	},
@@ -19,9 +19,9 @@ const useStyles = makeStyles((theme) => ({
 		color: theme.palette.text.secondary,
 	},
 	formControl: {
-		//width: "50rem",
+
 	},
-	formRow: {},
+	formRow: {	 minWidth: "600px"},
 }));
 
 export default function BasalCalcDropdown() {

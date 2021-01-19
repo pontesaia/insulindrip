@@ -63,3 +63,7 @@ a {
   text-decoration: none;
   padding:0 1rem;
 }
+
+.MuiAccordion-root:before {
+    background-color: none;
+}
