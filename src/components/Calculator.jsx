@@ -16,9 +16,10 @@ const useStyles = makeStyles((theme) => ({
 	root: {
 		maxWidth: "350px",
 		minWidth: "350px",
-		margin: "2rem auto",
+		margin: "4rem auto",
 		//backgroundColor: "transparent"
-		fontFamily: "Roboto"
+		fontFamily: "Roboto",
+		textAlign: "center"
 
 	},
 	heading: {
@@ -46,28 +47,26 @@ export default function Calculator() {
 	};
 
 	return (
-		<React.Fragment >
-			<Header/>
+		<React.Fragment>
 			{/* <BolusReference/>
 			<BasalReference/>
 			<AboutReference/> */}
-			<div className={classes.root} >
-				<hr/>
+			<div className={classes.root}>
+				<Header />
+				<hr />
 				<Accordion
 					expanded={expanded === "panel1"}
 					onChange={handleChange("panel1")}
 					elevation={0}
 				>
-					<AccordionSummary 
-					expandIcon={<ExpandMoreIcon />}
-					>
-						<Typography className={classes.heading} >
+					<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+						<Typography className={classes.heading}>
 							BOLUS
 						</Typography>
 					</AccordionSummary>
 					<BolusCalcDropdown />
 				</Accordion>
-				<hr/>
+				<hr />
 				<Accordion
 					expanded={expanded === "panel2"}
 					onChange={handleChange("panel2")}
@@ -80,7 +79,7 @@ export default function Calculator() {
 					</AccordionSummary>
 					<BasalCalcDropdown />
 				</Accordion>
-				<hr/>
+				<hr />
 			</div>
 		</React.Fragment>
 	);
