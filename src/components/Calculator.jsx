@@ -1,5 +1,7 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
+import "../App.css";
+// import { makeStyles } from "@material-ui/core/styles";
+import {calcStyles} from "./CalculatorStyles";
 import BolusCalcDropdown from "./BolusCalcDropdown";
 import BasalCalcDropdown from "./BasalCalcDropdown";
 import Accordion from "@material-ui/core/Accordion";
@@ -7,39 +9,11 @@ import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Header from"./Header";
-// import BasalReference from"./BasalReference";
-// import BolusReference from"./BolusReference";
-// import AboutReference from"./AboutReference";
+import Footer from"./Footer";
 
-const useStyles = makeStyles((theme) => ({
-		
-	root: {
-		maxWidth: "350px",
-		minWidth: "350px",
-		margin: "4rem auto",
-		//backgroundColor: "transparent"
-		fontFamily: "Roboto",
-		textAlign: "center"
-
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(18),
-		paddingLeft: ".5rem",
-			fontWeight: "bold",	
-	
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(15),
-		color: theme.palette.text.secondary,
-	},
-	formControl: {
-		//width: "50rem",
-	},
-	formRow: {},
-}));
 
 export default function Calculator() {
-	const classes = useStyles();
+	const classes = calcStyles();
 	const [expanded, setExpanded] = React.useState(false);
 
 	const handleChange = (panel) => (event, isExpanded) => {
@@ -48,9 +22,7 @@ export default function Calculator() {
 
 	return (
 		<React.Fragment>
-			{/* <BolusReference/>
-			<BasalReference/>
-			<AboutReference/> */}
+
 			<div className={classes.root}>
 				<Header />
 				<hr />
@@ -80,6 +52,8 @@ export default function Calculator() {
 					<BasalCalcDropdown />
 				</Accordion>
 				<hr />
+				<Footer />
+			
 			</div>
 		</React.Fragment>
 	);

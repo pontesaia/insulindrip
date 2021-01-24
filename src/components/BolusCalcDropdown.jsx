@@ -2,38 +2,10 @@ import React from "react";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import { makeStyles } from "@material-ui/core/styles";
+import {calcStyles} from "./CalculatorStyles";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		//maxWidth: '35%',
-		//margin: '2rem auto',
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(22),
-		// flexBasis: '33.33%',
-		// flexShrink: 0,
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(15),
-		color: theme.palette.text.secondary,
-	},
-	formControl: {
-		//width: "50rem",
-	},
-	formRow: {},
-	calcButton: {
-		borderRadius: "25px",
-		backgroundColor: "#35AEE3",
-		// padding: "12px, 32px, 12px, 32px",
-		width: "100px", 
-		height: "48px",
-		marginTop: "25px",
-		marginBottom: "10px",
-	},
-}));
 
 const items = [
 	{
@@ -71,7 +43,8 @@ const items = [
 ];
 
 export default function BolusCalcDropdown() {
-	const classes = useStyles();
+
+	const classes = calcStyles();
 	const calcField = items.map((i) => (
 		<FormControl variant="filled" className={classes.formControl}>
 			<Grid item>

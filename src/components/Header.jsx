@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: theme.typography.pxToRem(14),
 		color: "#0F75BC",
         fontFamily: "Roboto",
-        margin: ".5rem 0 2rem 0"
+        margin: ".5rem 0 5rem 0"
 	},
 	linkCalc: {
         color: "#0F75BC !important",

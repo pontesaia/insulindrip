@@ -1,58 +1,15 @@
 import React, { useState } from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import FormControl from "@material-ui/core/FormControl";
-import Header from "./Header";
+import {BolusRefStyles}from "./BolusRefStyles";
+import Header from"./Header";
+import Footer from"./Footer";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		maxWidth: "350px",
-		minWidth: "350px",
-		margin: "4rem auto",
-		backgroundColor: "transparent",
-		textAlign: "center",
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(18),
-		textAlign: "left",
-		fontWeight: "bold",
-		marginBottom: "1rem",
-	},
-	contentBody: {
-		fontSize: theme.typography.pxToRem(14),
-		textAlign: "left",
-		marginBottom: "1rem",
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(16),
-		color: theme.palette.text.primary,
-		textAlign: "left",
-		marginTop: "1rem",
-		marginBottom: ".5rem",
-		fontWeight: "bold",
-	},
-	formControl: {
-		//width: "50rem",
-	},
-	formRow: {},
-	calcButton: {
-		borderRadius: "25px",
-		backgroundColor: "#35AEE3",
-		// padding: "12px, 32px, 12px, 32px",
-		width: "100px",
-		height: "48px",
-		marginTop: "25px",
-		marginBottom: "10px",
-		marginLeft: "2rem",
-		marginRight: "2rem",
-	},
-}));
 
 export default function BolusReference() {
-	const classes = useStyles();
+	const classes = BolusRefStyles();
 	const [index, setIndex] = useState(0);
 
 	const previous = () => {
@@ -295,6 +252,7 @@ export default function BolusReference() {
 						</FormControl>
 					</Grid>
 				</Grid>
+				<Footer />
 			</div>
 		</React.Fragment>
 	);

@@ -1,7 +1,7 @@
-//import "src/images/insulindrip-logo-sml.svg";
+
 import "./App.css";
 import Calculator from "./components/Calculator";
-import { Switch, Route, Redirect, BrowserRouter } from "react-router-dom";
+import { Switch, Route, BrowserRouter } from "react-router-dom";
 import AboutReference from "./components/AboutReference";
 import BolusReference from "./components/BolusReference";
 import BasalReference from "./components/BasalReference";
@@ -27,6 +27,7 @@ function App() {
 					path="/AboutReference"
 					render={() => <AboutReference />}
 				/>
+				
 			</Switch>
 		</BrowserRouter>
 	);

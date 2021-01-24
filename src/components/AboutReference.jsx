@@ -1,66 +1,32 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Typography from "@material-ui/core/Typography";
-
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
+import { AboutRefStyles } from "./AboutRefStyles";
+import Header from"./Header";
+import Footer from"./Footer";
 
-const useStyles = makeStyles((theme) => ({
 
-		root: {
-		maxWidth: "350px",
-		minWidth: "350px",
-		margin: "2rem auto",
-		backgroundColor: "transparent"
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(18),
-		textAlign:"left",
-		fontWeight: "bold",
-		marginBottom:"1rem"
-		
-	},
-	contentBody:{
-		fontSize: theme.typography.pxToRem(14),
-		textAlign:"left",
-		marginBottom:"1rem"
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(16),
-		color: theme.palette.text.primary,
-		textAlign:"left",
-		marginTop:"1rem",
-		marginBottom:".5rem",
-		fontWeight: "bold",
-	},
-	formControl: {
-		//width: "50rem",
-	},
-	formRow: {},
-	calcButton: {
-		borderRadius: "25px",
-		backgroundColor: "#35AEE3",
-		// padding: "12px, 32px, 12px, 32px",
-		width: "100px", 
-		height: "48px",
-		marginTop: "25px",
-		marginBottom: "10px",
-		marginLeft:"2rem",
-		marginRight:"2rem",
-	},
-}));
+export default function AboutReference(){
+	
+	const classes = AboutRefStyles();
+	const [index, setIndex] = useState(0);
 
-export default function AboutReference() {
-	const classes = useStyles();
+	const previous = () => {
+		index !== 0 ? setIndex((prev) => prev - 1) : setIndex(0);
+	};
+	const next = () => {
+		index === textPages.length - 1
+			? setIndex(index)
+			: setIndex((prev) => prev + 1);
+	};
 
-	return (
-		<React.Fragment>
-			<Grid container className={classes.root} >
-			  <Grid container direction="column" spacing={0}>
-			
-				
-					<Typography className={classes.heading}>
+
+
+	const textPages = [
+		<>
+				<Typography className={classes.heading}>
 						About Formulas that are commonly used by providers to create insulin dose recommendations
 					</Typography>
 					<Typography className={classes.secondaryHeading}>
@@ -72,22 +38,55 @@ export default function AboutReference() {
 					<Typography className={classes.contentBody}>
 						The other 50-60% of the total daily insulin dose is for carbohydrate coverage (food) and high blood sugar correction. This is called the bolus insulin replacement.
 					</Typography>
-					<FormControl>
+		</>,
+		
+	];
+
+	return (
+		<React.Fragment>
+			<div className={classes.root}>
+				<Header />
+				<Grid container>
+					<Grid container direction="column" spacing={0}>
+						<FormControl>
+							{textPages[index]}
 							<Grid item>
 								<Button
 									variant="contained"
 									color="primary"
 									component="span"
 									className={classes.calcButton}
+									onClick={previous}
+									disabled={
+										index === 0
+											? true
+											: false
+									}
+								>
+									Prev
+								</Button>
+								<Button
+									variant="contained"
+									color="primary"
+									component="span"
+									className={classes.calcButton}
+									onClick={next}
+									disabled={
+										index === textPages.length - 1
+											? true
+											: false
+									}
 								>
 									Next
 								</Button>
 							</Grid>
 						</FormControl>
-				
-	
-			  </Grid>
-			</Grid>
+					</Grid>
+				</Grid>
+			    <Footer/>
+			</div>
 		</React.Fragment>
 	);
 }
+
+

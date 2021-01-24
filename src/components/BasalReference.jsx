@@ -1,64 +1,29 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-
+import React, { useState } from "react";
 import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
+import { BasalRefStyles } from "./BasalRefStyles";
+import Header from"./Header";
+import Footer from"./Footer";
 
-const useStyles = makeStyles((theme) => ({
 
-		root: {
-		maxWidth: "350px",
-		minWidth: "350px",
-		margin: "2rem auto",
-		backgroundColor: "transparent"
-	},
-	heading: {
-		fontSize: theme.typography.pxToRem(18),
-		textAlign:"left",
-		fontWeight: "bold",
-		marginBottom:"1rem"
-		
-	},
-	contentBody:{
-		fontSize: theme.typography.pxToRem(14),
-		textAlign:"left",
-		marginBottom:"1rem"
-	},
-	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(16),
-		color: theme.palette.text.primary,
-		textAlign:"left",
-		marginTop:"1rem",
-		marginBottom:".5rem",
-		fontWeight: "bold",
-	},
-	formControl: {
-		//width: "50rem",
-	},
-	formRow: {},
-	calcButton: {
-		borderRadius: "25px",
-		backgroundColor: "#35AEE3",
-		// padding: "12px, 32px, 12px, 32px",
-		width: "100px", 
-		height: "48px",
-		marginTop: "25px",
-		marginBottom: "10px",
-		marginLeft:"2rem",
-		marginRight:"2rem",
-	},
-}));
+export default function BasalReference(){
+	
+	const classes = BasalRefStyles();
+	const [index, setIndex] = useState(0);
 
-export default function BasalReference() {
-	const classes = useStyles();
+	const previous = () => {
+		index !== 0 ? setIndex((prev) => prev - 1) : setIndex(0);
+	};
+	const next = () => {
+		index === textPages.length - 1
+			? setIndex(index)
+			: setIndex((prev) => prev + 1);
+	};
 
-	return (
-		<React.Fragment>
-			<Grid container className={classes.root}>
-			  <Grid container direction="column" spacing={0}>
-			
+	const textPages = [
+		<>
 				<Typography className={classes.heading}>
 					Basal/background insulin dose
 				</Typography>
@@ -130,34 +95,53 @@ export default function BasalReference() {
 				<Typography className={classes.contentBody}>
 					Also, there are many variations of insulin therapy. You will need to work out your specific insulin requirements and dose regimen with your medical provider and diabetes team.
 				</Typography>
+		</>,
+		
+	];
 
+	return (
+		<React.Fragment>
+			<div className={classes.root}>
+				<Header />
 				<Grid container>
 					<Grid container direction="column" spacing={0}>
-					<FormControl>
-						<Grid item>
-							<Button
-								variant="contained"
-								color="primary"
-								component="span"
-								className={classes.calcButton}
-							>
-								Prev
-							</Button>
-							<Button
-								variant="contained"
-								color="primary"
-								component="span"
-								className={classes.calcButton}
-							>
-								Next
-							</Button>
-						</Grid>
-					</FormControl>
+						<FormControl>
+							{textPages[index]}
+							<Grid item>
+								<Button
+									variant="contained"
+									color="primary"
+									component="span"
+									className={classes.calcButton}
+									onClick={previous}
+									disabled={
+										index === 0
+											? true
+											: false
+									}
+								>
+									Prev
+								</Button>
+								<Button
+									variant="contained"
+									color="primary"
+									component="span"
+									className={classes.calcButton}
+									onClick={next}
+									disabled={
+										index === textPages.length - 1
+											? true
+											: false
+									}
+								>
+									Next
+								</Button>
+							</Grid>
+						</FormControl>
 					</Grid>
-				</Grid>	
-			</Grid>		
-		</Grid>	
-		
+				</Grid>
+				<Footer />
+			</div>
 		</React.Fragment>
 	);
 }

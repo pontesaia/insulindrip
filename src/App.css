@@ -65,5 +65,5 @@ a {
 }
 
 .MuiAccordion-root:before {
-    background-color: none;
+    background-color: #ffffff!important;
 }
