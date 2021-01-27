@@ -52,32 +52,6 @@ export default function AboutReference() {
 					<Grid container direction="column" spacing={0}>
 						<FormControl>
 							{textPages[index]}
-							<Grid item>
-								<Button
-									variant="contained"
-									color="primary"
-									component="span"
-									className={classes.calcButton}
-									onClick={previous}
-									disabled={index === 0 ? true : false}
-								>
-									Prev
-								</Button>
-								<Button
-									variant="contained"
-									color="primary"
-									component="span"
-									className={classes.calcButton}
-									onClick={next}
-									disabled={
-										index === textPages.length - 1
-											? true
-											: false
-									}
-								>
-									Next
-								</Button>
-							</Grid>
 						</FormControl>
 					</Grid>
 				</Grid>
