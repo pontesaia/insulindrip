@@ -4,12 +4,10 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import { AboutRefStyles } from "./AboutRefStyles";
-import Header from"./Header";
-import Footer from"./Footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
-
-export default function AboutReference(){
-	
+export default function AboutReference() {
 	const classes = AboutRefStyles();
 	const [index, setIndex] = useState(0);
 
@@ -22,24 +20,28 @@ export default function AboutReference(){
 			: setIndex((prev) => prev + 1);
 	};
 
-
-
 	const textPages = [
 		<>
-				<Typography className={classes.heading}>
-						About Formulas that are commonly used by providers to create insulin dose recommendations
-					</Typography>
-					<Typography className={classes.secondaryHeading}>
-						First, some basic things to know about insulin:
-					</Typography>
-					<Typography className={classes.contentBody}>
-						Approximately 40-50% of the total daily insulin dose is to replace insulin overnight, when you are fasting and between meals. This is called background or basal insulin replacement. The basal or background insulin dose usually is constant from day to day.
-					</Typography>
-					<Typography className={classes.contentBody}>
-						The other 50-60% of the total daily insulin dose is for carbohydrate coverage (food) and high blood sugar correction. This is called the bolus insulin replacement.
-					</Typography>
+			<Typography className={classes.heading}>
+				About Formulas that are commonly used by providers to create
+				insulin dose recommendations
+			</Typography>
+			<Typography className={classes.secondaryHeading}>
+				First, some basic things to know about insulin:
+			</Typography>
+			<Typography className={classes.contentBody}>
+				Approximately 40-50% of the total daily insulin dose is to
+				replace insulin overnight, when you are fasting and between
+				meals. This is called background or basal insulin replacement.
+				The basal or background insulin dose usually is constant from
+				day to day.
+			</Typography>
+			<Typography className={classes.contentBody}>
+				The other 50-60% of the total daily insulin dose is for
+				carbohydrate coverage (food) and high blood sugar correction.
+				This is called the bolus insulin replacement.
+			</Typography>
 		</>,
-		
 	];
 
 	return (
@@ -57,11 +59,7 @@ export default function AboutReference(){
 									component="span"
 									className={classes.calcButton}
 									onClick={previous}
-									disabled={
-										index === 0
-											? true
-											: false
-									}
+									disabled={index === 0 ? true : false}
 								>
 									Prev
 								</Button>
@@ -83,10 +81,8 @@ export default function AboutReference(){
 						</FormControl>
 					</Grid>
 				</Grid>
-			    <Footer/>
+				<Footer />
 			</div>
 		</React.Fragment>
 	);
 }
-
-

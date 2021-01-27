@@ -1,20 +1,25 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-
+import HomeIcon from "@material-ui/icons/Home";
+import AccountCircleIcon from "@material-ui/icons/AccountCircle";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import LocalLibraryIcon from "@material-ui/icons/LocalLibrary";
+import Tooltip from "@material-ui/core/Tooltip";
+import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
 	linkHeading: {
 		fontSize: theme.typography.pxToRem(14),
 		color: "#0F75BC",
-        fontFamily: "Roboto",
-        margin: "5rem 0 2rem 0"
+		fontFamily: "Roboto",
+		margin: "5rem 0 2rem 0",
 	},
 	linkCalc: {
-        color: "#0F75BC !important",
-        fontWeight: "bold",
-        fontSize: ".8rem"
-	}
+		color: "#0F75BC !important",
+		fontWeight: "bold",
+		fontSize: "2.5rem"
+	},
 }));
 
 export default function Footer() {
@@ -22,22 +27,51 @@ export default function Footer() {
 
 	return (
 		<React.Fragment>
-	
 			<Typography className={classes.linkHeading}>
-				<a href="/calculator">
-					<span className={classes.linkCalc}>HOME</span>
-				</a>
-				|<a href="/AboutReference">
-					<span className={classes.linkCalc}>ABOUT</span>
-				</a>
-				|
-				<a href="/calculator">
-					<span className={classes.linkCalc}>LOGOUT</span>
-				</a>
-				|
-				<a href="/calculator">
-					<span className={classes.linkCalc}>ACCOUNT</span>
-				</a>
+				<Grid
+					container
+					direction="row"
+					justify="space-evenly"
+					alignItems="center"
+					spacing={2}
+				>
+					<Grid item>
+						<a href="/calculator">
+							<span className={classes.linkCalc}>
+								<Tooltip title="Home">
+									<HomeIcon fontSize="inherit" />
+								</Tooltip>
+							</span>
+						</a>
+					</Grid>
+					<Grid item>
+						<a href="/AboutReference">
+							<span className={classes.linkCalc}>
+								<Tooltip title="About">
+									<LocalLibraryIcon fontSize="inherit" />
+								</Tooltip>
+							</span>
+						</a>
+					</Grid>
+					<Grid item>
+						<a href="/calculator">
+							<span className={classes.linkCalc}>
+								<Tooltip title="Logout">
+									<ExitToAppIcon fontSize="inherit" />
+								</Tooltip>
+							</span>
+						</a>
+					</Grid>
+					<Grid item>
+						<a href="/calculator">
+							<span className={classes.linkCalc}>
+								<Tooltip title="Account">
+									<AccountCircleIcon fontSize="inherit" />
+								</Tooltip>
+							</span>
+						</a>
+					</Grid>
+				</Grid>
 			</Typography>
 		</React.Fragment>
 	);

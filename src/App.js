@@ -5,6 +5,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom";
 import AboutReference from "./components/AboutReference";
 import BolusReference from "./components/BolusReference";
 import BasalReference from "./components/BasalReference";
+import GRID from "./components/GRID"
 
 function App() {
 	return (
@@ -27,7 +28,11 @@ function App() {
 					path="/AboutReference"
 					render={() => <AboutReference />}
 				/>
-				
+				<Route
+					exact
+					path="/GRID"
+					render={() => <GRID />}
+				/>
 			</Switch>
 		</BrowserRouter>
 	);
