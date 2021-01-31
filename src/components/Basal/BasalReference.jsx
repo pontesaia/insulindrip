@@ -4,8 +4,8 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import { BasalRefStyles } from "./BasalRefStyles";
-import Header from"./Header";
-import Footer from"./Footer";
+import Header from"../Home/Header";
+import Footer from"../Home/Footer";
 
 
 export default function BasalReference(){

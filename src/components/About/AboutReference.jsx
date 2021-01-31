@@ -1,24 +1,14 @@
-import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+
+import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import FormControl from "@material-ui/core/FormControl";
 import { AboutRefStyles } from "./AboutRefStyles";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Home/Header";
+import Footer from "../Home/Footer";
 
 export default function AboutReference() {
 	const classes = AboutRefStyles();
-	const [index, setIndex] = useState(0);
-
-	const previous = () => {
-		index !== 0 ? setIndex((prev) => prev - 1) : setIndex(0);
-	};
-	const next = () => {
-		index === textPages.length - 1
-			? setIndex(index)
-			: setIndex((prev) => prev + 1);
-	};
 
 	const textPages = [
 		<>
@@ -51,7 +41,7 @@ export default function AboutReference() {
 				<Grid container>
 					<Grid container direction="column" spacing={0}>
 						<FormControl>
-							{textPages[index]}
+							{textPages}
 						</FormControl>
 					</Grid>
 				</Grid>

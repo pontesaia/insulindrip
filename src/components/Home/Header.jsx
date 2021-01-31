@@ -20,13 +20,31 @@ const useStyles = makeStyles((theme) => ({
 	},
 }));
 
+
+const getTitle =()=>{
+   const url = window.location.href;
+   console.log(url);
+  
+
+   const path = url.split('/');
+    console.log(path);
+   return path[3];
+
+}
+
+
+
+
+
+
+
 export default function Header() {
 	const classes = useStyles();
 
 	return (
 		<React.Fragment>
 			<Typography variant="h5" className={classes.calcTitle} gutterBottom>
-				Calculator
+				{getTitle()}
 			</Typography>
 			<a href="/">
 				<img
@@ -37,16 +55,16 @@ export default function Header() {
 				/>
 			</a>
 			<Typography className={classes.linkHeading}>
-				<a href="/calculator">
-					<span className={classes.linkCalc}> CALCULATOR</span>
+				<a href="/Calculator">
+					<span className={classes.linkCalc}>CALCULATOR</span>
 				</a>
-				|
-				<a href="/BolusReference">
-					<span className={classes.linkCalc}> BOLUS</span>
+				
+				<a href="/Bolus">
+					<span className={classes.linkCalc}>BOLUS</span>
 				</a>
-				|
-				<a href="/BasalReference">
-					<span className={classes.linkCalc}> BASAL</span>
+				
+				<a href="/Basal">
+					<span className={classes.linkCalc}>BASAL</span>
 				</a>
 			</Typography>
 		</React.Fragment>

@@ -33,10 +33,9 @@ export default function Footer() {
 					direction="row"
 					justify="space-evenly"
 					alignItems="center"
-					spacing={2}
 				>
 					<Grid item>
-						<a href="/calculator">
+						<a href="/Calculator">
 							<span className={classes.linkCalc}>
 								<Tooltip title="Home">
 									<HomeIcon fontSize="inherit" />
@@ -45,7 +44,7 @@ export default function Footer() {
 						</a>
 					</Grid>
 					<Grid item>
-						<a href="/AboutReference">
+						<a href="/About">
 							<span className={classes.linkCalc}>
 								<Tooltip title="About">
 									<LocalLibraryIcon fontSize="inherit" />
@@ -54,7 +53,7 @@ export default function Footer() {
 						</a>
 					</Grid>
 					<Grid item>
-						<a href="/calculator">
+						<a href="/Calculator">
 							<span className={classes.linkCalc}>
 								<Tooltip title="Logout">
 									<ExitToAppIcon fontSize="inherit" />
@@ -63,7 +62,7 @@ export default function Footer() {
 						</a>
 					</Grid>
 					<Grid item>
-						<a href="/calculator">
+						<a href="/Calculator">
 							<span className={classes.linkCalc}>
 								<Tooltip title="Account">
 									<AccountCircleIcon fontSize="inherit" />

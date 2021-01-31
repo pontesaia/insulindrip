@@ -1,10 +1,10 @@
 
 import "./App.css";
-import Calculator from "./components/Calculator";
+import Calculator from "./components/Home/Calculator";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
-import AboutReference from "./components/AboutReference";
-import BolusReference from "./components/BolusReference";
-import BasalReference from "./components/BasalReference";
+import AboutReference from "./components/About/AboutReference";
+import BolusReference from "./components/Bolus/BolusReference";
+import BasalReference from "./components/Basal/BasalReference";
 import GRID from "./components/GRID"
 
 function App() {
@@ -12,20 +12,20 @@ function App() {
 		<BrowserRouter>
 			<Switch>
 				<Route exact path="/" render={() => <Calculator />} />
-				<Route exact path="/calculator" render={() => <Calculator />} />
+				<Route exact path="/Calculator" render={() => <Calculator />} />
 				<Route
 					exact
-					path="/BolusReference"
+					path="/Bolus"
 					render={() => <BolusReference />}
 				/>
 				<Route
 					exact
-					path="/BasalReference"
+					path="/Basal"
 					render={() => <BasalReference />}
 				/>
 				<Route
 					exact
-					path="/AboutReference"
+					path="/About"
 					render={() => <AboutReference />}
 				/>
 				<Route

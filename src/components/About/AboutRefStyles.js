@@ -1,16 +1,12 @@
 import { makeStyles } from "@material-ui/core/styles";
 
-
-
-export const calcStyles = makeStyles((theme) => ({
+export const AboutRefStyles = makeStyles((theme) => ({
 
 	root: {
-		maxWidth: "350px",
-		minWidth: "350px",
-		margin: "2rem auto",
-		backgroundColor: "transparent",
-		fontFamily: "Roboto",
-		textAlign: "center",
+		maxWidth: "70%",
+		margin: "4rem auto",
+        backgroundColor: "transparent",
+        textAlign: "center",
 	},
 	heading: {
 		fontSize: theme.typography.pxToRem(18),
@@ -25,21 +21,19 @@ export const calcStyles = makeStyles((theme) => ({
 		marginBottom:"1rem"
 	},
 	secondaryHeading: {
-		fontSize: theme.typography.pxToRem(15),
-		color: theme.palette.text.secondary,
+		fontSize: theme.typography.pxToRem(16),
+		color: theme.palette.text.primary,
 		textAlign:"left",
 		marginTop:"1rem",
 		marginBottom:".5rem",
 		fontWeight: "bold",
 	},
 	formControl: {
-		//width: "50rem",
 	},
-	formRow: {	 minWidth: "600px"},
+	formRow: {},
 	calcButton: {
 		borderRadius: "25px",
 		backgroundColor: "#35AEE3",
-		// padding: "12px, 32px, 12px, 32px",
 		width: "100px", 
 		height: "48px",
 		marginTop: "25px",
@@ -48,4 +42,3 @@ export const calcStyles = makeStyles((theme) => ({
 		marginRight:"2rem",
 	},
 }));
-

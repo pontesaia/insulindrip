@@ -1,9 +1,8 @@
 import React from "react";
-import "../App.css";
-// import { makeStyles } from "@material-ui/core/styles";
+import "../../App.css";
 import {calcStyles} from "./CalculatorStyles";
-import BolusCalcDropdown from "./BolusCalcDropdown";
-import BasalCalcDropdown from "./BasalCalcDropdown";
+import BolusCalcDropdown from "../Bolus/BolusCalcDropdown";
+import BasalCalcDropdown from "../Basal/BasalCalcDropdown";
 import Accordion from "@material-ui/core/Accordion";
 import AccordionSummary from "@material-ui/core/AccordionSummary";
 import Typography from "@material-ui/core/Typography";

@@ -4,8 +4,8 @@ import Button from "@material-ui/core/Button";
 import Grid from "@material-ui/core/Grid";
 import FormControl from "@material-ui/core/FormControl";
 import {BolusRefStyles}from "./BolusRefStyles";
-import Header from"./Header";
-import Footer from"./Footer";
+import Header from"../Home/Header";
+import Footer from"../Home/Footer";
 
 
 export default function BolusReference() {
