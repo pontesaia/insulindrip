@@ -1,5 +1,6 @@
 
 import "./App.css";
+import Home from "./components/Home/Home";
 import Calculator from "./components/Home/Calculator";
 import { Switch, Route, BrowserRouter } from "react-router-dom";
 import AboutReference from "./components/About/AboutReference";
@@ -13,6 +14,11 @@ function App() {
 			<Switch>
 				<Route exact path="/" render={() => <Calculator />} />
 				<Route exact path="/Calculator" render={() => <Calculator />} />
+				<Route
+					exact
+					path="/Home"
+					render={() => <Home />}
+				/>
 				<Route
 					exact
 					path="/Bolus"
