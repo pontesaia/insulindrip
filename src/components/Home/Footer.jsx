@@ -53,7 +53,7 @@ export default function Footer() {
 						</a>
 					</Grid>
 					<Grid item>
-						<a href="/Calculator">
+						<a href="/Home">
 							<span className={classes.linkCalc}>
 								<Tooltip title="Logout">
 									<ExitToAppIcon fontSize="inherit" />
@@ -62,7 +62,7 @@ export default function Footer() {
 						</a>
 					</Grid>
 					<Grid item>
-						<a href="/Calculator">
+						<a href="/Home">
 							<span className={classes.linkCalc}>
 								<Tooltip title="Account">
 									<AccountCircleIcon fontSize="inherit" />

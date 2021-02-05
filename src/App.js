@@ -13,7 +13,7 @@ function App() {
 	return (
 		<BrowserRouter>
 			<Switch>
-				<Route exact path="/" render={() => <Calculator />} />
+				<Route exact path="/" render={() => <Home />} />
 				<Route exact path="/Calculator" render={() => <Calculator />} />
 				<Route exact path="/Home" render={() => <Home />} />
 				<Route exact path="/Bolus" render={() => <BolusReference />} />

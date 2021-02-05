@@ -2,8 +2,11 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import FormControl from "@material-ui/core/FormControl";
+import { Link } from "react-router-dom";
+import { FormGroup } from "@material-ui/core";
 import { HomeStyles } from "./HomeStyles";
+import Header from"./Header";
+import Footer from"./Footer";
 
 export default function Login() {
      const classes = HomeStyles();
@@ -13,23 +16,28 @@ export default function Login() {
 				<div className={classes.root}>
 					<Grid container>
 						<Grid container direction="column" spacing={0}>
+							<Header/>
 							<Grid item>
-								<h1>
+								<Link to="/Home">
 									<Button
 										className={classes.backLink}
 									>
 										↩
 									</Button>
-								</h1>
+								</Link>
 							</Grid>
 							<Grid item>
-								<h1>Login</h1>
+								<Typography className={classes.secondaryHeading}>
+									Login to Save Your <br/>Insulin Drip Records
+								</Typography>
+							
 							</Grid>
-
+							<FormGroup>
 							<Grid item>
 								<input
 									type="text"
 									name="email"
+									className="inputControl"
 									placeholder="Enter your email"
 									id="email"
 								/>
@@ -39,22 +47,27 @@ export default function Login() {
 								<input
 									type="password"
 									name="password"
-									className="form-control"
+									className="inputControl"
 									placeholder="Enter your password"
 									id="password"
 								/>
 
 							</Grid>
 							<Grid item>
+								<Link to="/Calculator">
 								<Button
 									type="submit"
 									value="Submit"
-									className={classes.sendBtn}
+								    className={classes.sendBtn}
 								>
-									SEND
+									LOGIN
 								</Button>
+								</Link>
 							</Grid>
+							</FormGroup>
+							<Footer/>
 						</Grid>
+							
 					</Grid>
 				</div>
 			</React.Fragment>

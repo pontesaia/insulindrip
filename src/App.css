@@ -67,3 +67,14 @@ a {
 .MuiAccordion-root:before {
     background-color: #ffffff!important;
 }
+
+input[type="text" i] {
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
+input[type="password" i] {
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 1rem;
+}
