@@ -34,8 +34,22 @@ export const calcStyles = makeStyles((theme) => ({
 	},
 	formControl: {
 		minWidth: "350px",
+
 	},
-    formRow: {	 marginLeft: "0"},
+    formRow: {	 
+		marginLeft: "0",
+		marginTop: "25px",
+		marginBottom: "10px",
+	},
+	  formRowRate: {	 
+		marginLeft: "25px",
+		marginTop: "25px",
+		marginBottom: "10px",
+	},
+	formMeasure:{
+  		paddingLeft: "20px",
+	
+	},
 	calcButton: {
 		borderRadius: "25px",
 		backgroundColor: "#35AEE3",
@@ -45,6 +59,6 @@ export const calcStyles = makeStyles((theme) => ({
 		marginBottom: "10px",
 		marginLeft:"2rem",
 		marginRight:"2rem",
-	},
+	}
 }));
 
