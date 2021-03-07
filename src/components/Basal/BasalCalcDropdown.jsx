@@ -20,8 +20,8 @@ export default function BasalCalcDropdown() {
     dripRate = (60 * (desiredDose / 1000) * bodyWeight * bagVolume) / (1000 * drugInBag);
    
     document.getElementById('result').innerHTML = 
-        "<p>BASAL: As calculated, the Insulin drip rate is <span class='hilite'>" + dripRate 
-     + "</span> ml of rapid acting insulin per minute. <br/>.</p>"; 
+        "<p>Your BASAL calculations result: set the Insulin drip rate to <span class='hilite'>" + dripRate 
+     + "</span> ml of rapid acting insulin per minute.</p>"; 
 }
     
 
@@ -73,14 +73,14 @@ export default function BasalCalcDropdown() {
 						</Grid>
 
 						{/* Drip rate*/}
-						<Grid item className={classes.formRowRate}>
-							<TextField 
+						 <Grid item className={classes.formRowRate}>
+						 	<TextField 
 								id="dripRate" 
 								label="Drip rate" 
 								variant="outlined" 
 							/>
 							<span className={classes.formMeasure}>/ ml/min</span>
-						</Grid>
+						</Grid> 
 	
 						{/* button */}
 						<Grid item>
